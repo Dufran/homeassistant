@@ -5,11 +5,11 @@ services:
     volumes:
       - homeassistant_config:/config
       - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
     env_file: .env
     ports:
       - "${SERVICE_PORT}:8123"
     restart: unless-stopped
-    network_mode: host
 
 volumes: 
   homeassistant_config:
